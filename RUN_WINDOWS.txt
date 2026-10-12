@@ -1,0 +1,38 @@
+AI Supply Chain Management – How to run on Windows
+===================================================
+
+1. Unzip this folder to Desktop (e.g. C:\Users\YourName\Desktop\ai-scm)
+
+2. Install (if not already):
+   - Python 3.10+  from https://www.python.org/downloads/  (tick "Add to PATH")
+   - Node.js 18+   from https://nodejs.org/
+
+3. BACKEND (PowerShell window 1)
+   cd C:\Users\YourName\Desktop\ai-scm\backend
+   pip install -r requirements.txt
+   pip install bcrypt==4.0.1
+   $env:PYTHONPATH = (Get-Location).Path
+   python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+   Leave this window open. API: http://localhost:8000/docs
+
+4. FRONTEND (PowerShell window 2)
+   cd C:\Users\YourName\Desktop\ai-scm\frontend
+   npm install
+   npm run dev
+
+   Open: http://localhost:5173
+
+5. Login
+   Email:    manager@bharatsmart.in
+   Password: manager123
+
+Other accounts: admin@ / admin123, inventory@ / inventory123,
+logistics@ / logistics123, viewer@ / viewer123
+(all @bharatsmart.in)
+
+Notes
+-----
+- Use PowerShell, not CMD (for $env:PYTHONPATH).
+- If port 8000/5173 is busy, close other apps using them.
+- Do NOT use: set PYTHONPATH=%CD%  (that is CMD syntax only).

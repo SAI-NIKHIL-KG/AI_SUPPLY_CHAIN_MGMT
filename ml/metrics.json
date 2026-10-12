@@ -1,0 +1,36 @@
+{
+  "metrics": [
+    {
+      "model": "Linear Regression",
+      "horizon": "30-day panel",
+      "mae": 35.89,
+      "rmse": 44.23,
+      "mape": 46.48
+    },
+    {
+      "model": "Random Forest",
+      "horizon": "30-day panel",
+      "mae": 14.47,
+      "rmse": 18.2,
+      "mape": 13.28
+    },
+    {
+      "model": "XGBoost",
+      "horizon": "30-day panel",
+      "mae": 14.41,
+      "rmse": 17.86,
+      "mape": 13.64
+    }
+  ],
+  "default_model": "xgboost",
+  "feature_cols": [
+    "day_of_week",
+    "month",
+    "day_index",
+    "is_festival",
+    "is_weekend",
+    "product_id"
+  ],
+  "n_train": 2700,
+  "n_test": 900
+}
